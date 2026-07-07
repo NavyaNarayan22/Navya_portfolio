@@ -9,6 +9,11 @@ A production-grade **Retrieval-Augmented Generation** system that answers questi
 
 ---
 
+## UI Preview 
+
+<img width="1920" height="1080" alt="Screenshot 2026-07-07 155308" src="https://github.com/user-attachments/assets/967ea8a6-8c31-4b09-85a9-acabc1082b1d" />
+
+
 ## Demo
 
 > **Q:** What is the key innovation in the Transformer architecture?
