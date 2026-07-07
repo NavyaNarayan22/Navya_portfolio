@@ -11,8 +11,7 @@ A production-grade **Retrieval-Augmented Generation** system that answers questi
 
 ## UI Preview 
 
-<img width="1920" height="1080" alt="Screenshot 2026-07-07 155308" src="https://github.com/user-attachments/assets/967ea8a6-8c31-4b09-85a9-acabc1082b1d" />
-
+<img width="1838" height="907" alt="Screenshot 2026-07-07 155308" src="https://github.com/user-attachments/assets/a05eba96-780f-4bb0-9e6e-fdabecfbc577" />
 
 ## Demo
 
