@@ -1,0 +1,42 @@
+[
+  {
+    "question": "What is the key innovation in the Transformer architecture?",
+    "ground_truth": "The key innovation is self-attention, which allows the model to relate different positions of a sequence to compute a representation, replacing recurrence entirely."
+  },
+  {
+    "question": "What does BERT stand for and what is its main contribution?",
+    "ground_truth": "BERT stands for Bidirectional Encoder Representations from Transformers. Its main contribution is pre-training a deep bidirectional transformer on unlabeled text, enabling fine-tuning for downstream NLP tasks."
+  },
+  {
+    "question": "What is the core idea behind RAG (Retrieval Augmented Generation)?",
+    "ground_truth": "RAG combines a retrieval component that fetches relevant documents with a generative model that uses those documents as context to produce answers, reducing hallucination."
+  },
+  {
+    "question": "What is the key contribution of the DPR paper?",
+    "ground_truth": "DPR (Dense Passage Retrieval) shows that dense embeddings outperform BM25 for open-domain question answering retrieval, using a dual-encoder trained on question-passage pairs."
+  },
+  {
+    "question": "How does RoBERTa improve upon BERT?",
+    "ground_truth": "RoBERTa improves BERT by training longer on more data, removing the next sentence prediction objective, using larger mini-batches, and training on longer sequences."
+  },
+  {
+    "question": "What is RLHF and which model used it?",
+    "ground_truth": "RLHF stands for Reinforcement Learning from Human Feedback. It was used to train InstructGPT, aligning the model to follow instructions by training a reward model on human preferences."
+  },
+  {
+    "question": "How does GPT-3 differ from previous language models in terms of scale?",
+    "ground_truth": "GPT-3 has 175 billion parameters, making it orders of magnitude larger than previous models, enabling few-shot learning without any gradient updates or fine-tuning."
+  },
+  {
+    "question": "What is the T5 framework's approach to NLP tasks?",
+    "ground_truth": "T5 (Text-to-Text Transfer Transformer) converts every NLP task into a text-to-text format, where both input and output are always strings, enabling a unified model for all tasks."
+  },
+  {
+    "question": "What makes LLaMA models efficient compared to GPT-3?",
+    "ground_truth": "LLaMA models achieve competitive performance with much smaller parameter counts by training on more tokens for longer, showing that compute-optimal training matters more than raw model size."
+  },
+  {
+    "question": "What is the difference between InstructGPT and GPT-3?",
+    "ground_truth": "InstructGPT is fine-tuned from GPT-3 using RLHF to follow human instructions more reliably. It is smaller than GPT-3 but rated as more helpful and less harmful by human evaluators."
+  }
+]

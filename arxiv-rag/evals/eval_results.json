@@ -1,0 +1,342 @@
+[
+  {
+    "question": "What is the key innovation in the Transformer architecture?",
+    "ground_truth": "The key innovation is self-attention, which allows the model to relate different positions of a sequence to compute a representation, replacing recurrence entirely.",
+    "generated_answer": "relying entirely on an attention mechanism to draw global dependencies between input and output.",
+    "sources": [
+      "rlhf.pdf",
+      "llama.pdf",
+      "attention_is_all_you_need.pdf",
+      "t5.pdf",
+      "t5.pdf"
+    ],
+    "chunks": [
+      {
+        "text": "The Transformer architecture (Vaswani et al., 2017) unleashed unparalleled e\ufb03ciency on modern accelerators\nand has become the de-facto approach for language models. In the span of only four years, the largest",
+        "source": "rlhf.pdf"
+      },
+      {
+        "text": "In the rest of this paper, we present an overview\nof the modi\ufb01cations we made to the transformer\narchitecture (Vaswani et al., 2017), as well as our\ntraining method. We then report the performance of\nour models and compare with others LLMs on a set",
+        "source": "llama.pdf"
+      },
+      {
+        "text": "relying entirely on an attention mechanism to draw global dependencies between input and output.\nThe Transformer allows for significantly more parallelization and can reach a new state of the art in",
+        "source": "attention_is_all_you_need.pdf"
+      },
+      {
+        "text": "based on the Transformer architecture. Apart from the details mentioned below and the\nvariants we explore in Section 3.2, we do not deviate significantly from this architecture as",
+        "source": "t5.pdf"
+      },
+      {
+        "text": "a more detailed introduction.\nThe primary building block of the Transformer is self-attention (Cheng et al., 2016).\nSelf-attention is a variant of attention (Graves, 2013; Bahdanau et al., 2015) that processes",
+        "source": "t5.pdf"
+      }
+    ]
+  },
+  {
+    "question": "What does BERT stand for and what is its main contribution?",
+    "ground_truth": "BERT stands for Bidirectional Encoder Representations from Transformers. Its main contribution is pre-training a deep bidirectional transformer on unlabeled text, enabling fine-tuning for downstream NLP tasks.",
+    "generated_answer": "I don't have enough information to answer this.\n\nHowever, based on the context, I can tell you that BERT is a conceptually simple and empirically powerful model that obtains new state-of-the-art results on eleven natural language processing tasks. \n\nAs for its main contribution, BERT's main contribution is that it uses the self-attention mechanism to unify the two stages of encoding a concatenated text pair, effectively including bidirectional cross attention between two sentences.",
+    "sources": [
+      "bert.pdf",
+      "gpt3.pdf",
+      "bert.pdf",
+      "bert.pdf",
+      "t5.pdf"
+    ],
+    "chunks": [
+      {
+        "text": "BERT is conceptually simple and empirically\npowerful. It obtains new state-of-the-art re-\nsults on eleven natural language processing\ntasks, including pushing the GLUE score to\n80.5% (7.7% point absolute improvement),",
+        "source": "bert.pdf"
+      },
+      {
+        "text": "BERT: smaller, faster, cheaper and lighter. arXiv preprint arXiv:1910.01108, 2019.\n[SDSE19] Roy Schwartz, Jesse Dodge, Noah A. Smith, and Oren Etzioni. Green AI. CoRR, abs/1907.10597, 2019.",
+        "source": "gpt3.pdf"
+      },
+      {
+        "text": "method to BERT is OpenAI GPT, which trains a\nleft-to-right Transformer LM on a large text cor-\npus. In fact, many of the design decisions in BERT\nwere intentionally made to make it as close to\nGPT as possible so that the two methods could be",
+        "source": "bert.pdf"
+      },
+      {
+        "text": "as Parikh et al. (2016); Seo et al. (2017). BERT\ninstead uses the self-attention mechanism to unify\nthese two stages, as encoding a concatenated text\npair with self-attention effectively includes bidi-\nrectional cross attention between two sentences.",
+        "source": "bert.pdf"
+      },
+      {
+        "text": "pre-training BERT on text from research papers improved its performance on scientific tasks.\nThe main lesson behind these findings is thatpre-training on in-domain unlabeled data can",
+        "source": "t5.pdf"
+      }
+    ]
+  },
+  {
+    "question": "What is the core idea behind RAG (Retrieval Augmented Generation)?",
+    "ground_truth": "RAG combines a retrieval component that fetches relevant documents with a generative model that uses those documents as context to produce answers, reducing hallucination.",
+    "generated_answer": "I don't have enough information to answer this.\n\nHowever, based on the context provided, I can infer that the core idea behind RAG (Retrieval Augmented Generation) is related to learning to retrieve relevant information for the task, as mentioned in Source 1.",
+    "sources": [
+      "rag_original.pdf",
+      "rag_original.pdf",
+      "rag_original.pdf",
+      "rag_original.pdf",
+      "rag_original.pdf"
+    ],
+    "chunks": [
+      {
+        "text": "more diverse than RAG-Token\u2019s, and both are signi\ufb01cantly more diverse than BART without needing\nany diversity-promoting decoding.\nRetrieval Ablations A key feature of RAG is learning to retrieve relevant information for the task.",
+        "source": "rag_original.pdf"
+      },
+      {
+        "text": "with generations that are more factual, and offers more control and interpretability. RAG could be\nemployed in a wide variety of scenarios with direct bene\ufb01t to society, for example by endowing it",
+        "source": "rag_original.pdf"
+      },
+      {
+        "text": "input. In these cases, once retrieval had collapsed, the generator would learn to ignore the documents,\nand the RAG model would perform equivalently to BART. The collapse could be due to a less-explicit",
+        "source": "rag_original.pdf"
+      },
+      {
+        "text": "without expensive, specialized \u201csalient span masking\u201d pre-training [20]. It is worth noting that RAG\u2019s\nretriever is initialized using DPR\u2019s retriever, which uses retrieval supervision on Natural Questions",
+        "source": "rag_original.pdf"
+      },
+      {
+        "text": "RAG can rely on parametric knowledge to generate reasonable responses.\n3.3 Jeopardy Question Generation\nTo evaluate RAG\u2019s generation abilities in a non-QA setting, we study open-domain question gen-",
+        "source": "rag_original.pdf"
+      }
+    ]
+  },
+  {
+    "question": "What is the key contribution of the DPR paper?",
+    "ground_truth": "DPR (Dense Passage Retrieval) shows that dense embeddings outperform BM25 for open-domain question answering retrieval, using a dual-encoder trained on question-passage pairs.",
+    "generated_answer": "I don't have enough information to answer this.",
+    "sources": [
+      "t5.pdf",
+      "rag_original.pdf",
+      "dense_passage_retrieval.pdf",
+      "t5.pdf",
+      "t5.pdf"
+    ],
+    "chunks": [
+      {
+        "text": "training set, but the DPR data set adds about1,000 pronoun resolution examples. Examples\nfrom DPR are annotated with the correct referent noun, making it easy to use this data set\nin the format listed above.",
+        "source": "t5.pdf"
+      },
+      {
+        "text": "2.2 Retriever: DPR\nThe retrieval componentp\u03b7(z|x) is based on DPR [26]. DPR follows a bi-encoder architecture:\np\u03b7(z|x)\u221d exp\n(\nd(z)\u22a4q(x)\n)\nd(z) = BERTd(z), q(x) = BERTq(x)",
+        "source": "rag_original.pdf"
+      },
+      {
+        "text": "Zhiyuan Liu thoroughly revised the whole paper.\nJingang Wang, Juanzi Li, Wei Wu and Maosong\nSun proofread the paper and provided valuable\ncomments.\nAcknowledgements\nThis work is supported by the National Key R&D",
+        "source": "dense_passage_retrieval.pdf"
+      },
+      {
+        "text": "Separately, we also convert the Winograd tasks (WNLI from GLUE, WSC from Super-\nGLUE, and the DPR data set we add to SuperGLUE) into a simpler format that is more\namenable to the text-to-text framework. Examples from the Winograd tasks consist of a",
+        "source": "t5.pdf"
+      },
+      {
+        "text": "Ruder et al. (2019).\nWe systematically study these contributions by taking a reasonable baseline (described\nin Section 3.1) and altering one aspect of the setup at a time. For example, in Section 3.3",
+        "source": "t5.pdf"
+      }
+    ]
+  },
+  {
+    "question": "How does RoBERTa improve upon BERT?",
+    "ground_truth": "RoBERTa improves BERT by training longer on more data, removing the next sentence prediction objective, using larger mini-batches, and training on longer sequences.",
+    "generated_answer": "According to the context, RoBERTa improves upon BERT in the following ways:\n\n1. RoBERTa is trained with dynamic masking (Source 1).\n2. RoBERTa uses FULL-SENTENCES without NSP (Source 1).\n3. RoBERTa was found to be significantly undertrained, and an improved recipe for training BERT models was proposed, which we call RoBERTa (Source 4).\n4. RoBERTa consistently outperforms both BERT LARGE and XLNetLARGE (Source 2).\n\nThese improvements result in RoBERTa providing a large improvement over the originally reported BERT LARGE results (Source 3).",
+    "sources": [
+      "roberta.pdf",
+      "roberta.pdf",
+      "roberta.pdf",
+      "roberta.pdf",
+      "gpt3.pdf"
+    ],
+    "chunks": [
+      {
+        "text": "improvements and evaluate their combined im-\npact. We call this con\ufb01guration RoBERTa for\nR\nobustly optimized BERT approach. Speci\ufb01-\ncally, RoBERTa is trained with dynamic mask-\ning (Section\n4.1), FULL -SENTENCES without NSP",
+        "source": "roberta.pdf"
+      },
+      {
+        "text": "task development sets. Crucially, RoBERTa uses\nthe same masked language modeling pretrain-\ning objective and architecture as BERT LARGE , yet\nconsistently outperforms both BERT LARGE and\nXLNetLARGE . This raises questions about the rel-",
+        "source": "roberta.pdf"
+      },
+      {
+        "text": "Results We present our results in Table\n4. When\ncontrolling for training data, we observe that\nRoBERTa provides a large improvement over the\noriginally reported BERTLARGE results, reaf\ufb01rming\nthe importance of the design choices we explored\nin Section\n4.",
+        "source": "roberta.pdf"
+      },
+      {
+        "text": "tuning and training set size. We \ufb01nd that BERT\nwas signi\ufb01cantly undertrained and propose an im-\nproved recipe for training BERT models, which\nwe call RoBERTa, that can match or exceed the\nperformance of all of the post-BERT methods.",
+        "source": "roberta.pdf"
+      },
+      {
+        "text": "Luke Zettlemoyer, and Veselin Stoyanov. RoBERTa: A robustly optimized BERT pretraining approach.\narXiv preprint arXiv:1907.11692, 2019.\n[LPP+20] Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal,",
+        "source": "gpt3.pdf"
+      }
+    ]
+  },
+  {
+    "question": "What is RLHF and which model used it?",
+    "ground_truth": "RLHF stands for Reinforcement Learning from Human Feedback. It was used to train InstructGPT, aligning the model to follow instructions by training a reward model on human preferences.",
+    "generated_answer": "RLHF stands for Reinforcement Learning from Human Feedback. \n\nThe model that used RLHF is a GPT-3 model, which was initialized from a pre-trained GPT-3 model and then applied supervised fine-tuning for RLHF.",
+    "sources": [
+      "instructgpt.pdf",
+      "instructgpt.pdf",
+      "instructgpt.pdf",
+      "instructgpt.pdf",
+      "instructgpt.pdf"
+    ],
+    "chunks": [
+      {
+        "text": "learning. Moreover, the alignment technique we use here, RLHF, is an important building block in\nseveral proposals to align superhuman systems (Leike et al., 2018; Irving et al., 2018; Christiano",
+        "source": "instructgpt.pdf"
+      },
+      {
+        "text": "C.4 Details of RLHF training\nWe then initialize the RL policies from the above supervised \ufb01ne-tuned models with pretraining mix.\nThese models are also used to compute the KL reward, in the same way as Stiennon et al. (2020), with",
+        "source": "instructgpt.pdf"
+      },
+      {
+        "text": "our results show that RLHF is very effective at making language models more helpful to\nusers, more so than a 100x model size increase. This suggests that right now increasing",
+        "source": "instructgpt.pdf"
+      },
+      {
+        "text": "to align models with human intentions, particularly reinforcement learning from human feed-\nback (RLHF). Originally developed for training simple robots in simulated environments and Atari",
+        "source": "instructgpt.pdf"
+      },
+      {
+        "text": "(K\n2\n)\n\u2264 2,304 comparisons.\nC.3 Details of the initialization models for RLHF\nWe initialize the RLHF models from a pretrained GPT-3 model and apply supervised \ufb01ne-tuning for",
+        "source": "instructgpt.pdf"
+      }
+    ]
+  },
+  {
+    "question": "How does GPT-3 differ from previous language models in terms of scale?",
+    "ground_truth": "GPT-3 has 175 billion parameters, making it orders of magnitude larger than previous models, enabling few-shot learning without any gradient updates or fine-tuning.",
+    "generated_answer": "GPT-3 has parameters 10x more than any previous non-sparse language model.",
+    "sources": [
+      "gpt3.pdf",
+      "gpt3.pdf",
+      "gpt3.pdf",
+      "gpt3.pdf",
+      "gpt3.pdf"
+    ],
+    "chunks": [
+      {
+        "text": "parameters, 10x more than any previous non-sparse language model, and test its performance in\nthe few-shot setting. For all tasks, GPT-3 is applied without any gradient updates or \ufb01ne-tuning,",
+        "source": "gpt3.pdf"
+      },
+      {
+        "text": "unsupervised NMT work. GPT-3 has a noticeable skew in its performance depending on language direction. For the\nthree input languages studied, GPT-3 signi\ufb01cantly outperforms prior unsupervised NMT work when translating into",
+        "source": "gpt3.pdf"
+      },
+      {
+        "text": "RACE). We also conjecture, based on past literature, that a large bidirectional model would be stronger at \ufb01ne-tuning\nthan GPT-3. Making a bidirectional model at the scale of GPT-3, and/or trying to make bidirectional models work with",
+        "source": "gpt3.pdf"
+      },
+      {
+        "text": "GPT-3\u2019s training data is still primarily English (93% by word count), it also includes 7% of text in other languages.\nThese languages are documented in the supplemental material. In order to better understand translation capability, we",
+        "source": "gpt3.pdf"
+      },
+      {
+        "text": "with back-translation [SHB15] to bridge the two languages in a controlled way. By contrast, GPT-3 learns from a\nblend of training data that mixes many languages together in a natural way, combining them on a word, sentence,",
+        "source": "gpt3.pdf"
+      }
+    ]
+  },
+  {
+    "question": "What is the T5 framework's approach to NLP tasks?",
+    "ground_truth": "T5 (Text-to-Text Transfer Transformer) converts every NLP task into a text-to-text format, where both input and output are always strings, enabling a unified model for all tasks.",
+    "generated_answer": "The T5 framework's approach to NLP tasks is to cast all text problems as question answering. This approach is inspired by previous unifying frameworks for NLP tasks, including casting all text problems as question answering (McCann et al., 2018).",
+    "sources": [
+      "t5.pdf",
+      "rag_original.pdf",
+      "t5.pdf",
+      "t5.pdf",
+      "instructgpt.pdf"
+    ],
+    "chunks": [
+      {
+        "text": "\u201cT5\u201d refers to our model, which we dub the \u201cText-to-Text Transfer Transformer\u201d.\nsummarization, and sentiment classification, to name a few. With this unified approach,",
+        "source": "t5.pdf"
+      },
+      {
+        "text": "with 11 Billion trainable parameters. The T5 model with the closest number of parameters to our\nmodels is T5-large (770M parameters), which achieves a score of 28.9 EM on Natural Questions [52],",
+        "source": "rag_original.pdf"
+      },
+      {
+        "text": "approach is inspired by previous unifying frameworks for NLP tasks, including casting all text\nproblems as question answering (McCann et al., 2018), language modeling (Radford et al.,",
+        "source": "t5.pdf"
+      },
+      {
+        "text": "examples is shown in Figure 1. We provide full examples of preprocessed inputs for every\ntask we studied in Appendix D.\nOur text-to-text framework follows previous work that casts multiple NLP tasks into",
+        "source": "t5.pdf"
+      },
+      {
+        "text": "(in particular, the T0++ variant). These datasets consist of a variety of NLP tasks, combined with\nnatural language instructions for each task. On our API prompt distribution, our FLAN and T0",
+        "source": "instructgpt.pdf"
+      }
+    ]
+  },
+  {
+    "question": "What makes LLaMA models efficient compared to GPT-3?",
+    "ground_truth": "LLaMA models achieve competitive performance with much smaller parameter counts by training on more tokens for longer, showing that compute-optimal training matters more than raw model size.",
+    "generated_answer": "According to the context, LLaMA models are more than 10\u00d7 smaller than GPT-3, yet they outperform GPT-3 on most benchmarks.",
+    "sources": [
+      "llama.pdf",
+      "llama.pdf",
+      "llama.pdf",
+      "llama.pdf",
+      "llama.pdf"
+    ],
+    "chunks": [
+      {
+        "text": "with state-of-the-art foundation models. Most\nnotably, LLaMA-13B outperforms GPT-3 while\nbeing more than 10\u00d7 smaller, and LLaMA-65B is\ncompetitive with Chinchilla-70B and PaLM-540B.\nUnlike previous studies, we show that it is possible",
+        "source": "llama.pdf"
+      },
+      {
+        "text": "resulting models, called LLaMA, ranges from 7B\nto 65B parameters with competitive performance\ncompared to the best existing LLMs. For instance,\nLLaMA-13B outperforms GPT-3 on most bench-\nmarks, despite being 10\u00d7 smaller. We believe that",
+        "source": "llama.pdf"
+      },
+      {
+        "text": "state-of-the-art models using publicly avail-\nable datasets exclusively, without resorting\nto proprietary and inaccessible datasets. In\nparticular, LLaMA-13B outperforms GPT-3\n(175B) on most benchmarks, and LLaMA-\n65B is competitive with the best models,",
+        "source": "llama.pdf"
+      },
+      {
+        "text": "setup from Brown et al. (2020) and report results\nin Table 6. On these benchmarks, LLaMA-65B is\ncompetitive with PaLM-540B, and, LLaMA-13B\noutperforms GPT-3 by a few percents.\n3.4 Mathematical reasoning\nWe evaluate our models on two mathematical rea-",
+        "source": "llama.pdf"
+      },
+      {
+        "text": "pare with GPT-3 and OPT-175B in Table 12.\nLLaMA compares slightly favorably to both\nmodels on average. Our model is particularly bi-\nased in the religion category (+10% compared to\nOPT-175B), followed by age and gender. We ex-",
+        "source": "llama.pdf"
+      }
+    ]
+  },
+  {
+    "question": "What is the difference between InstructGPT and GPT-3?",
+    "ground_truth": "InstructGPT is fine-tuned from GPT-3 using RLHF to follow human instructions more reliably. It is smaller than GPT-3 but rated as more helpful and less harmful by human evaluators.",
+    "generated_answer": "According to the sources, the differences between InstructGPT and GPT-3 are:\n\n1. InstructGPT models \"hallucinate\" less often in closed-domain tasks, suggesting they are more reliable and easier to control.\n2. InstructGPT can summarize and answer questions about code more reliably than GPT-3.\n3. InstructGPT models have outputs preferred over GPT-3, despite having over 100x fewer parameters.\n4. InstructGPT models show improvements in truthfulness over GPT-3.\n5. InstructGPT models generate less toxic outputs than GPT-3 when given a \"respectful prompt\", but this advantage disappears when the prompt is removed.\n\nThese differences suggest that InstructGPT has several advantages over GPT-3, including improved reliability, truthfulness, and control.",
+    "sources": [
+      "instructgpt.pdf",
+      "instructgpt.pdf",
+      "instructgpt.pdf",
+      "instructgpt.pdf",
+      "instructgpt.pdf"
+    ],
+    "chunks": [
+      {
+        "text": "make up facts (\u2018hallucinate\u2019) less often in closed-domain tasks. These results suggest that InstructGPT\nmodels are more reliable and easier to control than GPT-3. We\u2019ve found that our other metadata\n11GPT GPT\n(prompted)\nSFT PPO PPO-ptx\n0\n0.25\n0.50",
+        "source": "instructgpt.pdf"
+      },
+      {
+        "text": "to in English. (2) InstructGPT can summarize and answer questions about code more reliably than\nGPT-3 (though its answer here isn\u2019t quite correct). For the code QA example, GPT-3 does answer the\nquestion about 50% of the time.",
+        "source": "instructgpt.pdf"
+      },
+      {
+        "text": "outputs from the 1.3B parameter InstructGPT model are preferred to outputs from the 175B GPT-3,\ndespite having over 100x fewer parameters. These models have the same architecture, and differ only",
+        "source": "instructgpt.pdf"
+      },
+      {
+        "text": "to our labelers, and more reliably follow explicit constraints in the instruction.\nInstructGPT models show improvements in truthfulness over GPT-3. On the TruthfulQA",
+        "source": "instructgpt.pdf"
+      },
+      {
+        "text": "(\u201crespectful prompt\u201d), InstructGPT models generate less toxic outputs than those from GPT-3\naccording to the Perspective API. This advantage disappears when the respectful prompt is removed",
+        "source": "instructgpt.pdf"
+      }
+    ]
+  }
+]
